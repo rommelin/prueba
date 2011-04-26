@@ -1,0 +1,24 @@
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.contenedor{ margin:0 auto; width:1000px; border:solid #CCCCCC 1px;}
+.titulo{ float:left; width:1000px; font-family:Arial, Helvetica, sans-serif; font-size:24px;}
+.ima{  margin-left:30px; float:left; width:900px; height:400px;}
+.resumen{ margin-left:30px; float:left; width:1000px; font-family:Arial, Helvetica, sans-serif; font-size:16px; }
+.contenido{ width:900px; margin-left:30px; font-family:Arial, Helvetica, sans-serif; font-size:12px;}
+-->
+</style>
+<div class="contenedor"><br>
+<p id="notice"><%= notice %></p>
+<div class="titulo"><%= @noticium.titulo %><br><br /></div>
+<div class="ima"><img src="../<%= @noticium.imagen %>" /><br></div>
+<div class="resumen"><%=@noticium.resumen %><br><%= @noticium.reportero %></div>
+<div class="contenido" align="justify"><%= simple_format(@noticium.contenido) %><br>
+
+<%= link_to 'regresar', noticia_path %>
+</div>

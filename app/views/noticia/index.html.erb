@@ -1,0 +1,33 @@
+<style type="text/css">
+<!--
+
+.contenedor{ margin:0 auto; width:1000px; }
+.titulo{ float:left; width:500px; font-family:Arial, Helvetica, sans-serif; font-size:14px;}
+.ima{  margin-left:30px; float:left; width:900px; height:400px;}
+.resumen{ float:left; width:500px; font-family:Arial, Helvetica, sans-serif; font-size:12px; }
+.contenido{ width:1000px; padding-left:30px; float:left; border:solid #CCCCCC 1px;}
+.op{ float:left; width:500px; padding-top:30px;}
+-->
+</style>
+
+<div class="contenedor"><br>
+<div class="contenido">
+<div class="op">
+<% @noticia.each do |noticium| %>
+
+<div class="titulo"><%= noticium.titulo %><br></div>
+
+<div class="resumen"><%= noticium.resumen %><br><%= noticium.reportero %>&nbsp;&nbsp;<%= link_to 'Ver Mas...', noticium %></div>
+<%= link_to 'Editar', edit_noticium_path(noticium) %>
+<%= link_to 'Eliminar', noticium, :confirm => 'Are you sure?', :method => :delete %><br><br>
+
+<% end %>
+</div>
+
+
+
+</div>
+<%= link_to 'nueva noticia', new_noticium_path %>
+</div>
+
+
